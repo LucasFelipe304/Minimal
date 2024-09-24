@@ -1,5 +1,4 @@
-from datetime import date
-
+from datetime import date, datetime
 def constant_days(): 
     DAYS = [
         'Monday',
@@ -12,23 +11,28 @@ def constant_days():
 ]
     return DAYS
 
-def IndexDay():
+def current_time():
+    time = datetime.now()
+    return time
+
+current_time()
+
+
+def index_day():
     current_day = date.today().weekday()
     if current_day == 0:
-        print('Monday')
+        return('Monday')
     elif current_day == 1:
-        print('Tuesday')
+        return('Tuesday')
     elif current_day == 2:
-        print('Wednesday')
+        return('Wednesday')
     elif current_day == 3:
-        print('Thursday')
+        return('Thursday')
     elif current_day == 4:
-        print('Friday')
+        return('Friday')
     elif current_day == 5:
-        print('Saturday')
+        return('Saturday')
     else:
-        print('Sunday')    
-
-IndexDay()
-
+        return('Sunday')    
+index_day()
 
