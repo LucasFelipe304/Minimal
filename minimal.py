@@ -1,4 +1,9 @@
 from datetime import date, datetime
+import os
+
+def get_username():
+    return os.getlogin()
+
 def constant_days(): 
     DAYS = [
         'Monday',
@@ -10,13 +15,6 @@ def constant_days():
         'Sunday'
 ]
     return DAYS
-
-def current_time():
-    time = datetime.now()
-    return time
-
-current_time()
-
 
 def index_day():
     current_day = date.today().weekday()
