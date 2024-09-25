@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import datetime, date
 import os
 
 def get_username():
@@ -15,6 +15,23 @@ def constant_days():
         'Sunday'
 ]
     return DAYS
+
+def current_time():
+    return datetime.now()
+
+def saudation():
+    current_time = datetime.now()
+    hour = current_time.hour
+
+    if 5 <= hour < 12:
+        print (f"Good Morning, {os.getlogin()}!")
+    if 12 <= hour < 18:
+        print (f"Good afternoon, {os.getlogin()}!")
+    else:
+        print (f"Good night, {os.getlogin()}!")
+
+saudation()
+
 
 def index_day():
     current_day = date.today().weekday()
