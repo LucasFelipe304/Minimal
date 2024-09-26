@@ -48,3 +48,13 @@ def daily_info():
     day_informations = current_time()
     print('Day informations -> ', index_day(), day_informations)
 
+def menu():
+    menu = (
+        "1 - Add Task\n"
+        "2 - Delete Task\n"
+        "3 - Change Task\n"
+        "4 - Exit"
+    )
+    print(menu)
+
+menu()
