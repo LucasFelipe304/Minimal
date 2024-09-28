@@ -57,4 +57,12 @@ def menu():
     )
     print(menu)
 
+saudation()
+daily_info()
+line()
 menu()
+
+def type_choice():
+    type_user = str(input("~~~> ")).strip()
+    return type_user
+
