@@ -72,7 +72,19 @@ def handle_choice(type_user):
     if type_user == '1':
         print('|| Add Task')
         type_addtask = str(input("Type: ")).strip().lower()
+    
+    elif type_user == '2':
+        print('|| Delete Task')
+        type_deletetask = str(input('Type: ')).strip().lower
+
+    elif type_user == '3':
+        print('|| Change Task')
+        type_changetask = str(input('Type: ')).strip().lower()
+    
+    elif type_user == '4':
+        print('Exiting...')
+        exit()
     else:
         print("Invalid choice!")
 
-handle_choice(type_user)
+handle_choice(type_user) 
