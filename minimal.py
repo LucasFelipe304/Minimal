@@ -66,3 +66,13 @@ def type_choice():
     type_user = str(input("~~~> ")).strip()
     return type_user
 
+type_user = type_choice()
+
+def handle_choice(type_user):
+    if type_user == '1':
+        print('|| Add Task')
+        type_addtask = str(input("Type: ")).strip().lower()
+    else:
+        print("Invalid choice!")
+
+handle_choice(type_user)
