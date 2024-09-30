@@ -73,7 +73,10 @@ def handle_choice(type_user):
     if type_user == '1':
         print('||| Add Task')
         type_addtask = str(input("Type: ")).strip().lower()
-    
+        task_list = []
+        task_list.append(type_addtask)
+        print('-' * 4, 'Task Added.')
+        
     elif type_user == '2':
         print('||| Delete Task')
         type_deletetask = str(input('Type: ')).strip().lower
