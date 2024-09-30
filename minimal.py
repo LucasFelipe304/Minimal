@@ -24,10 +24,11 @@ def saudation():
 
     if 5 <= hour < 12:
         print (f"Good Morning, {os.getlogin()}!")
-    if 12 <= hour < 18:
+    elif 12 <= hour < 18:
         print (f"Good afternoon, {os.getlogin()}!")
     else:
         print (f"Good night, {os.getlogin()}!")
+
 def index_day():
     current_day = date.today().weekday()
     if current_day == 0:
@@ -70,15 +71,15 @@ type_user = type_choice()
 
 def handle_choice(type_user):
     if type_user == '1':
-        print('|| Add Task')
+        print('||| Add Task')
         type_addtask = str(input("Type: ")).strip().lower()
     
     elif type_user == '2':
-        print('|| Delete Task')
+        print('||| Delete Task')
         type_deletetask = str(input('Type: ')).strip().lower
 
     elif type_user == '3':
-        print('|| Change Task')
+        print('||| Change Task')
         type_changetask = str(input('Type: ')).strip().lower()
     
     elif type_user == '4':
