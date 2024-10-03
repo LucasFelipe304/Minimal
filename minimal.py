@@ -5,17 +5,6 @@ def get_username():
     return os.getlogin()
 def line():
     print('-' * 25)
-def constant_days(): 
-    DAYS = [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday'
-]
-    return DAYS
 def current_time():
     return datetime.now()
 def saudation():
@@ -67,28 +56,34 @@ def type_choice():
     type_user = str(input("~~~> ")).strip()
     return type_user
 
-type_user = type_choice()
+task_list = []
 
-def handle_choice(type_user):
-    if type_user == '1':
-        print('||| Add Task')
-        type_addtask = str(input("Type: ")).strip().lower()
-        task_list = []
-        task_list.append(type_addtask)
-        print('-' * 4, 'Task Added.')
-        
-    elif type_user == '2':
-        print('||| Delete Task')
-        type_deletetask = str(input('Type: ')).strip().lower
-
-    elif type_user == '3':
-        print('||| Change Task')
-        type_changetask = str(input('Type: ')).strip().lower()
+while True:
+    type_user = type_choice()
     
-    elif type_user == '4':
-        print('Exiting...')
-        exit()
-    else:
-        print("Invalid choice!")
+    def handle_choice(type_user):
+
+        if type_user == '1':
+            print('||| Add Task')
+            type_addtask = str(input("Type: ")).strip().lower()
+            task_list.append(type_addtask)
+            print('-' * 4, 'Task Added.')
+            
+        elif type_user == '2' and len(task_list) > 0:
+            print('||| Delete Task')
+            for item in enumerate(task_list):
+                print(item)
+            type_deletetask = int(input('Type the index of the item you want to delete: '))
+            task_list.pop(type_deletetask)
+
+        elif type_user == '3':
+            print('||| Change Task')
+            type_changetask = str(input('Type: ')).strip().lower()
+
+        elif type_user == '4':
+            print('Exiting...')
+            exit()
+        else:
+            print("Invalid choice!")
 
 handle_choice(type_user) 
