@@ -69,12 +69,22 @@ while True:
             task_list.append(type_addtask)
             print('-' * 4, 'Task Added.')
             
-        elif type_user == '2' and len(task_list) > 0:
-            print('||| Delete Task')
-            for item in enumerate(task_list):
-                print(item)
-            type_deletetask = int(input('Type the index of the item you want to delete: '))
-            task_list.pop(type_deletetask)
+        elif type_user == '2':
+            if len (task_list) > 0:
+                print('||| Delete Task')
+                
+            for index, task in enumerate(task_list):
+                print(f"{index}, {task}")
+
+            try:
+                type_deletetask = int(input('Type the index of the item you want to delete: '))
+                if 0 <= type_deletetask < len(task_list):
+                    task_list.pop(type_deletetask)
+                    print('-' * 4, 'Task Deleted.')
+                else:
+                    print("Invalid index.")
+            except ValueError:
+                print("Please enter a valid number.")
 
         elif type_user == '3':
             print('||| Change Task')
