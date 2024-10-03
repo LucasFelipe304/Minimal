@@ -60,7 +60,6 @@ task_list = []
 
 while True:
     type_user = type_choice()
-    
     def handle_choice(type_user):
 
         if type_user == '1':
@@ -72,19 +71,18 @@ while True:
         elif type_user == '2':
             if len (task_list) > 0:
                 print('||| Delete Task')
+                for index, task in enumerate(task_list):
+                    print(f"{index}:, {task}")
 
-            for index, task in enumerate(task_list):
-                print(f"{index}:, {task}")
-
-            try:
-                type_deletetask = int(input('Type the index of the item you want to delete: '))
-                if 0 <= type_deletetask < len(task_list):
-                    task_list.pop(type_deletetask)
-                    print('-' * 4, 'Task Deleted.')
-                else:
-                    print("Invalid index.")
-            except ValueError:
-                print("Please enter a valid number.")
+                try:
+                    type_deletetask = int(input('Type the index of the item you want to delete: '))
+                    if 0 <= type_deletetask < len(task_list):
+                        task_list.pop(type_deletetask)
+                        print('-' * 4, 'Task Deleted.')
+                    else:
+                        print("Invalid index.")
+                except ValueError:
+                    print("Please enter a valid number.")
 
             else:
                 print("No tasks to delete.")
@@ -108,12 +106,12 @@ while True:
                 print("No tasks to change.")
         
         elif type_user == '4':
+            print("Exiting...")
             return False
         
         else:
             print("Invalid choice!")
-            return True
+        return True
+    
     if not handle_choice(type_user):
         break
-
-handle_choice(type_user) 
