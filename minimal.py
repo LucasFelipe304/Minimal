@@ -106,6 +106,14 @@ while True:
                     print("Please enter a valid number.")
             else:
                 print("No tasks to change.")
-                
+        
+        elif type_user == '4':
+            return False
+        
+        else:
+            print("Invalid choice!")
+            return True
+    if not handle_choice(type_user):
+        break
 
 handle_choice(type_user) 
