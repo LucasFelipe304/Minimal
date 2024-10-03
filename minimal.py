@@ -43,7 +43,8 @@ def menu():
         "1 - Add Task\n"
         "2 - Delete Task\n"
         "3 - Change Task\n"
-        "4 - Exit"
+        "4 - View List" 
+        "5 - Exit"
     )
     print(menu)
 
@@ -105,13 +106,21 @@ while True:
             else:
                 print("No tasks to change.")
         
-        elif type_user == '4':
+        elif type_user == '5':
             print("Exiting...")
             return False
         
+        elif type_user == "4":
+            if len(task_list) > 0:
+                print("||| View List")
+                for index, item in enumerate(task_list):
+                    print(f"{index}: {item}")
+            else:
+                print("The list is empty.")
         else:
             print("Invalid choice!")
         return True
+    
     
     if not handle_choice(type_user):
         break
