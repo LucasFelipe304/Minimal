@@ -8,6 +8,10 @@ def get_username():
     """Returns the system's username."""
     return os.getlogin()
 
+def space():
+    """Prints a space to separete lines."""
+    print() 
+
 def current_time():
     """Returns the current date and time."""
     return datetime.now()
@@ -30,10 +34,10 @@ def current_day():
 
 def daily_info():
     """Displays today's date and current time information."""
-    print("Day information ->", current_day(), daily_info)
-
+    print("Day information ->", current_day(), current_time())
+    space()
 def display_menu():
-    "Displays the option menu."
+    """Displays the option menu."""
     menu = (
         "1 - Add Task\n"
         "2 - Delete Task\n"
@@ -42,24 +46,28 @@ def display_menu():
         "5 - Exit\n"
     )
     print(menu)
+    space()
 
 def get_user_choice():
-    """Captures and return the user's choice."""
-    return input("~~~>").strip()
+    """Captures and returns the user's choice."""
+    return input("~~~> ").strip()
 
 def display_tasks(task_list):
-    """Displays the list of taks."""
+    """Displays the list of tasks."""
     if not task_list:
         print("No tasks available.")
     else:
         for index, task in enumerate(task_list):
             print(f"{index}: {task}")
+    space()
+
 
 def add_task(task_list):
     """Adds a new task to the task list."""
     new_task = input("Type the new task: ").strip().lower()
     task_list.append(new_task)
     print("---- Task Added.")
+    space()
 
 def delete_task(task_list):
     """Removes a task from the task list by index."""
@@ -70,12 +78,19 @@ def delete_task(task_list):
             if 0 <= task_index < len(task_list):
                 task_list.pop(task_index)
                 print("---- Task Deleted.")
+                space()
+
             else:
                 print("Invalid index.")
+                space()
+                
         except ValueError:
             print("Please enter a valid number.")
+            space()
+
     else:
         print("No tasks to delete.")
+        space()
 
 def change_task(task_list):
     """Updates an existing task by index."""
@@ -85,21 +100,26 @@ def change_task(task_list):
             task_index = int(input("Type the index of the task to change: "))
             if 0 <= task_index < len(task_list):
                 new_task = input("Enter the new task: ").strip().lower()
-                task_list[task_list] = new_task
+                task_list[task_index] = new_task  # Corrected this line
                 print("---- Task Updated.")
+                space()
             else:
                 print("Invalid index.")
+                space()
         except ValueError:
             print("Please enter a valid number.")
+            space()
     else:
         print("No tasks to change.")
+        space()
 
 def view_list(task_list):
-    """Viewing the task list."""
-    print(enumerate(task_list))
+    """Displays the task list."""
+    display_tasks(task_list)  # Updated to use display_tasks
+    space()
 
 def handle_choice(choice, task_list):
-    """Handles the user's choice and call the corresponding function."""
+    """Handles the user's choice and calls the corresponding function."""
     if choice == "1":
         add_task(task_list)
     elif choice == "2":
