@@ -77,12 +77,16 @@ def delete_task(task_list):
     if task_list:
         display_tasks(task_list)
         try:
-            task_index = int(input("Type the index of the task to delete: "))
-            if 0 <= task_index < len(task_list):
-                task_list.pop(task_index)
-                print("---- Task Deleted.")
-                space()
-
+            task_index = str(input("Type the index of the task to delete: "))
+            if task_index.isnumeric():
+                task_index = int(task_index)
+                if 0 <= task_index < len(task_list):
+                    task_list.pop(task_index)
+                    print("---- Task Deleted.")
+                    space()
+                else:
+                    print("Invalid index.")
+                    space()
             else:
                 print("Invalid index.")
                 space()
