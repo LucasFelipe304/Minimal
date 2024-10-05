@@ -64,10 +64,13 @@ def display_tasks(task_list):
 
 def add_task(task_list):
     """Adds a new task to the task list."""
-    new_task = input("Type the new task: ").strip().lower()
-    task_list.append(new_task)
-    print("---- Task Added.")
-    space()
+    new_task = str(input("Type the new task: ").strip().lower())
+    if new_task.isalpha():
+        task_list.append(new_task)
+        print("---- Task Added.")
+        space()
+    else:
+        print("Type only caracteres.")
 
 def delete_task(task_list):
     """Removes a task from the task list by index."""
