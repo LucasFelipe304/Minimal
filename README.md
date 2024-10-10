@@ -61,7 +61,10 @@ To run this project, you need to have Python installed on your system.
    python <filename>.py
 
 ## Example
-
-After running the script, any added tasks will be saved to a JSON file. To see the contents of this file, you can open tasks.json directly or display it in the terminal using:
-  ```bash
+  After running the script, any added tasks will be saved to a JSON file. To see the contents of this file, you can open tasks.json directly or display it in the terminal using:
+  ``` 
   cat tasks.json
+ ```
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
