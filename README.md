@@ -1,4 +1,4 @@
-# Task List Manager
+# Minimal - Task List Manager
 
 This Python script allows users to manage a task list directly from the terminal. The program offers features for adding, modifying, viewing, and deleting tasks. Tasks are automatically saved in a JSON file, ensuring they are available even after the program is closed.
 
